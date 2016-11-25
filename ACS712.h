@@ -11,7 +11,7 @@ enum ACS712_type {ACS712_05B, ACS712_20A, ACS712_30A};
 
 class ACS712 {
 public:
-	void ACS712(ACS712_type type, uint8_t _pin);
+	ACS712(ACS712_type type, uint8_t _pin);
 	void calibrate();
 	void setSensitivity(float sens);
 	float getCurrentDC();

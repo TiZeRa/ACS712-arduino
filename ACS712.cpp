@@ -1,6 +1,6 @@
 #include "ACS712.h"
 
-bool ACS712::ACS712(ACS712_type type, uint8_t _pin) {
+ACS712::ACS712(ACS712_type type, uint8_t _pin) {
 	switch (type) {
 		case ACS712_05B:
 			sensitivity = 0.185;
@@ -12,10 +12,10 @@ bool ACS712::ACS712(ACS712_type type, uint8_t _pin) {
 			sensitivity = 0.066;
 			break;
 		default:
-			return false;
+			sensitivity = 0.066;
+			break;
 	}
 	pin = _pin;
-	initialized = true;
 }
 
 void ACS712::calibrate() {
